@@ -1,38 +1,13 @@
-function dontGiveMeFive(start, end, sub = end - start, result = []) {
+function dontGiveMeFive(start, end, result = 0) {
 
-    for (let i = 0; i <= sub; i++) {
-        if (check5Presence(start)) {
-            start++;
+    for (let i = start; i <= end; i++) {
+        if (String(i).indexOf(5)>-1) {
             continue;
         } else {
-            result.push(start);
-            start++;
+            result++;
         }
     }
-    return result.length;
-
-    function check5Presence(number, n = 0, tenToPower = (n) => { return Math.pow(10, n) }) {
-        number = (number > 0) ? number : -number;
-        while (number > tenToPower(n)) {
-            n++;
-        }
-
-        for (; n > 0;) {
-            if (number === 0) {
-                return false;
-            } else {
-                n--;
-                if (10 * tenToPower(n) - Math.floor(number / (tenToPower(n))) * tenToPower(n) === (5 * tenToPower(n))) {
-                    return true;
-                } else {
-                    while (number >= 0) {
-                        number -= tenToPower(n);
-                    }
-                    number += tenToPower(n);
-                }
-            }
-        }
-    }
+    return result;    
 }
 
 let c = dontGiveMeFive(4, 17)
