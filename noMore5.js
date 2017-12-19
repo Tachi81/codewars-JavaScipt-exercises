@@ -10,7 +10,7 @@ function dontGiveMeFive(start, end, result = 0) {
     return result;    
 }
 
-let c = dontGiveMeFive(4, 17)
+let c = dontGiveMeFive(4, 17);
 console.log(c, '=?', 12);
 
 c = dontGiveMeFive(1, 9),
