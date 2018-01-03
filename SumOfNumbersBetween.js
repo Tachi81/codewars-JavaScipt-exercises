@@ -1,8 +1,8 @@
 function GetSum(a, b, result = 0) {
-    for (let i = [a, b].sort()[0]; i <= [a, b].sort()[1]; i++) {
+    for (let i = Math.min(a,b); i <= Math.max(a,b); i++) {
         result += i;
     }
-    console.log(result);
+    console.log(result, ([a, b].sort()));
     return result;
 }
 
